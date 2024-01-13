@@ -1,0 +1,7 @@
+footer {
+    background-color: var(--nav-background);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 0;
+    color: var(--dark-blue);
+}
