@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/footer.css">
 </head>
     <body>
+        <?php include "partials/nav.php";?>
         <header>
             <h1>Profesional Skills Portfolio</h1>
         </header>

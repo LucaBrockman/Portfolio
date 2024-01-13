@@ -51,7 +51,7 @@ nav a {
 
 nav ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding-right: 10rem;
 }
