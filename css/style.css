@@ -34,11 +34,10 @@ nav {
     height: 5rem;
     background-color: var(--nav-background);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
     top: 0;
-    transition: background-color 0.4s ease-in-out;
     z-index: 100;
 }
 
@@ -53,7 +52,6 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 10rem;
 }
 
 nav ul li {
@@ -64,16 +62,16 @@ nav ul li {
     margin-left: 1rem;
 }
 
-nav li:nth-child(-n+5) a {
+nav li a {
     position: relative;
     text-transform: none;
 }
 
-nav li:nth-child(-n+5) a::after {
+nav li a::after {
     content: '';
     height: 0.2rem;
     width: 100%;
-    background: var(--white);
+    background: var(--dark-blue);
     position: absolute;
     left: 0;
     bottom: -0.5rem;
@@ -83,12 +81,8 @@ nav li:nth-child(-n+5) a::after {
     pointer-events: none;
 }
 
-nav li:nth-child(-n+5) a:hover::after {
+nav li a:hover::after {
     opacity: 1;
-}
-
-nav.scrolled li:nth-child(-n+5) a::after {
-    background: var(--dark-blue);
 }
 
 header {
