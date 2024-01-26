@@ -32,6 +32,6 @@
                 ?>
             </section>
         </main>
-        <?php include "partials/footer.php";?>
+        <?php  ?>
     </body>
 </html>
