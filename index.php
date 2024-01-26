@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="./css/footer.css"> -->
 </head>
     <body>
-        <!-- <?php include "partials/nav.php";?> -->
         <header>
-                <h1>Profesional Skills Portfolio</h1>
+                <h1>Professional Skills Portfolio</h1>
         </header>
         <main>
             <section class="pdf-grid">

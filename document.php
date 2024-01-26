@@ -8,7 +8,7 @@
 </head>
     <body>
         <header>
-            <h1>Profesional Skills Portfolio</h1>
+            <h1>Professional Skills Portfolio</h1>
             <button class="back-button" onclick="history.back()">Ga terug</button>
         </header>
         <main>
