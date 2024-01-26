@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <!-- <link rel="stylesheet" href="./css/footer.css"> -->
 </head>
     <body>
-        <?php include "partials/nav.php";?>
+        <!-- <?php include "partials/nav.php";?> -->
         <header>
-            <h1>Profesional Skills Portfolio</h1>
+                <h1>Profesional Skills Portfolio</h1>
         </header>
         <main>
             <section class="pdf-grid">
@@ -21,11 +21,14 @@
                     foreach ($files as $file) {
                         if (pathinfo($file, PATHINFO_EXTENSION) == "pdf") {
                             $filenameWithoutExtension = basename($file, ".pdf");
+                            $thumbnailPath = "./thumbnails/" . $filenameWithoutExtension . ".png"; // Adjust the path accordingly
+
                             echo "<div class='pdf-container'>";
+                            echo "<a href='document.php?file=$file'>";
+                            echo "<img src='" . (file_exists($thumbnailPath) ? $thumbnailPath : 'https://placehold.co/240x340') . "' alt='Thumbnail'>";
                             echo "<div class='pdf-title'>" . htmlspecialchars($filenameWithoutExtension) . "</div>";
-                            echo "<object data='./documenten/$file' type='application/pdf' width='100%' height='100%'></object>";
-                            echo "<div class='pdf-overlay' onclick='window.open(\"document.php?file=$file\", \"_blank\");'></div>";
                             echo "</div>";
+                            echo "</a>";
                         }
                     }
                 ?>

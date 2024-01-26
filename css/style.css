@@ -7,96 +7,45 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-behavior: smooth;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004); /* Make fonts appear smoother */
+    color: var(--text-color);
 }
 
 :root {
+    --text-color: #D6DCE5;
+    --background: #333f50;
+    --nav-background: #EFEFF1;
+
     --dark-blue: #023a51;
     --normal-blue: #c7eaf8;
     --light-blue: #dcf1f9;
-    --background: #8738ed;
-    --nav-background: #EFEFF1;
+
+
     --background-reverse: #1C1C1C;
     --header-background: linear-gradient(rgb(1, 45, 62), rgba(239, 239, 241, 1), rgba(239, 239, 241, 1));
-    --text-color: #023a51;
     --white: #FFFFFF;
     --black: #000;
 }
 
 body    {
-    background-color: var(--black);
+    background-color: var(--background);
     height: 100vh;
     margin: 0;
 }
 
-
-nav {
-    width: 100%;
-    height: 5rem;
-    background-color: var(--nav-background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 0;
-    z-index: 100;
-}
-
-nav a {
-    font-family: Calibre-Bold;
-    font-size: 1.125rem;
-    color: var(--dark-blue);
-    transition: color 0.4s ease-in-out;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav ul li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
-
-nav li a {
-    position: relative;
-    text-transform: none;
-}
-
-nav li a::after {
-    content: '';
-    height: 0.2rem;
-    width: 100%;
-    background: var(--dark-blue);
-    position: absolute;
-    left: 0;
-    bottom: -0.5rem;
-    opacity: 0;
-    transition: background-color 0.4s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
-}
-
-nav li a:hover::after {
-    opacity: 1;
-}
-
 header {
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 main {
-    min-height: 60vh;
-    color: var(--dark-blue);
+    min-height: 80vh;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 /* Container for all PDFs */
@@ -104,18 +53,47 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around; /* Adjust as needed for alignment */
-    gap: 20px; /* Space between items */
+    gap: 15px; /* Space between items */
+    max-width: 80vw;
 }
 
 /* Individual PDF container */
 .pdf-container {
     position: relative;
-    width: 300px; /* Adjust the width as needed */
-    height: 200px; /* Adjust the height as needed */
-    margin-bottom: 20px; /* Spacing between each PDF */
-    border: 1px solid #ddd; /* Optional border for visibility */
-    box-sizing: border-box; /* This ensures padding and border are included in the width/height */
-    overflow: hidden; /* This ensures nothing spills out of the container */
+    width: 240px;
+    height: 340px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: 200ms;
+
+}
+
+.pdf-container:hover {
+    scale: 1.05;
+}
+
+.pdf-title {
+    font-size: 16px;
+    margin-top: 5px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; /* Make the text span the full width */
+    color: var(--text-color);
+    background: rgba(51, 63, 80, 0.9); /* Semi-transparent background for better text visibility */
+    padding: 8px; /* Add padding for better appearance */
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+img {
+    width: 100%;
+    height: 100%; /* Ensure the image takes up the full height of the container */
+    object-fit: cover;
 }
 
 .pdf-overlay {
@@ -124,15 +102,33 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background: transparent;
+    background: rgba(255, 255, 255, 0);
     cursor: pointer;
     z-index: 10;
 }
 
-.pdf-title {
+footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    width: 100vw;
+    height: 80vh;
+    border: 0; /* Remove iframe border */
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
     font-size: 16px;
-    margin-bottom: 5px;
-    background-color: var(--nav-background);
-    color: var(--text-color);
-    text-align: center;
+    border-radius: 5px;
 }
