@@ -13,15 +13,6 @@
 :root {
     --text-color: #D6DCE5;
     --background: #333f50;
-    --nav-background: #EFEFF1;
-
-    --dark-blue: #023a51;
-    --normal-blue: #c7eaf8;
-    --light-blue: #dcf1f9;
-
-
-    --background-reverse: #1C1C1C;
-    --header-background: linear-gradient(rgb(1, 45, 62), rgba(239, 239, 241, 1), rgba(239, 239, 241, 1));
     --white: #FFFFFF;
     --black: #000;
 }
@@ -34,9 +25,31 @@ body    {
 
 header {
     height: 10vh;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+}
+
+header h1 {
+    grid-column: 2;
+    text-align: center;
+}
+
+.back-button {
+    background-color: var(--text-color);
+    color: var(--background);
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 0 3vw;
+}
+
+.delete {
+    color: transparent;
+    background-color: transparent;
 }
 
 main {
@@ -120,15 +133,3 @@ iframe {
     border: 0; /* Remove iframe border */
 }
 
-.back-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: var(--dark-blue);
-    color: var(--white);
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}

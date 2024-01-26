@@ -8,8 +8,14 @@
 </head>
     <body>
         <header>
-            <h1>Professional Skills Portfolio</h1>
             <button class="back-button" onclick="history.back()">Ga terug</button>
+            <h1>Professional Skills Portfolio</h1>
+            <?php
+            $file = isset($_GET['file']) ? $_GET['file'] : '';
+            if ($file && pathinfo($file, PATHINFO_EXTENSION) == "pdf") {
+                echo "<button class='back-button' onclick='window.open(\"./documenten/$file\", \"_blank\");'>Download</button>";
+            }
+        ?>
         </header>
         <main>
             <?php

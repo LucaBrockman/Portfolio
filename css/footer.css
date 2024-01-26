@@ -1,8 +1,0 @@
-footer {
-    max-height: 10vh;
-    background-color: var(--nav-background);
-
-    text-align: center;
-    margin-bottom: 0;
-    color: var(--dark-blue);
-}
