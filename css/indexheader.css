@@ -1,0 +1,12 @@
+header {
+    margin: auto;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header :hover {
+    color: var(--white);
+}
